@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Türkmen halkynyň milli oýunlary, däp-dessurlary we medeni mirasy bilen tanyş boluň.">
+<title>Türkmen Milli Oýunlary</title>
+<style>
+:root{--green:#07512f;--green2:#0b6a3d;--gold:#c59b35;--cream:#fffaf0;--ink:#183326;--muted:#66766b;--line:#e9ddc8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fbf7ef;color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+header{position:sticky;top:0;z-index:20;background:rgba(255,250,240,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--green);font-size:22px;font-weight:bold;line-height:1.05}
+.logo{width:48px;height:48px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:27px;background:#fff7df}
+nav{display:flex;gap:25px;align-items:center}nav a{color:var(--ink);text-decoration:none;font-size:15px}nav a:hover{color:var(--green2)}
+.lang{background:var(--green);color:white;border:0;border-radius:30px;padding:10px 17px;cursor:pointer}
+.menu{display:none;background:none;border:0;font-size:25px;color:var(--green)}
+.hero{min-height:440px;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(255,250,240,.97) 0%,rgba(255,250,240,.88) 42%,rgba(255,250,240,.08) 100%),radial-gradient(ellipse at 78% 35%,#c5d7bb 0 12%,transparent 13%),linear-gradient(135deg,#dce9d4,#b3cba8 55%,#e9d7ae)}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 38px,rgba(7,81,47,.045) 39px 41px)}
+.hero:after{content:"✥  ❖  ✥  ❖  ✥";position:absolute;bottom:12px;right:5%;font-size:35px;letter-spacing:15px;color:rgba(7,81,47,.35)}
+.hero-inner{max-width:1200px;margin:auto;padding:82px 24px 90px;position:relative;z-index:1}
+.eyebrow{color:var(--green2);font-weight:bold;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(42px,6vw,68px);line-height:1.02;color:var(--green);max-width:650px;margin:16px 0}
+.subtitle{font-size:clamp(20px,2.5vw,27px);font-style:italic;color:#385d43;margin:0 0 20px}
+.hero p{max-width:540px;font-size:18px;line-height:1.6}
+.btn{display:inline-block;border:0;border-radius:30px;padding:13px 23px;background:var(--green);color:white;text-decoration:none;font: bold 15px Georgia;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--green2);transform:translateY(-2px)}
+section{max-width:1200px;margin:auto;padding:42px 24px}
+.section-title{text-align:center;color:var(--green);font-size:32px;margin:0 0 8px}
+.section-sub{text-align:center;color:var(--muted);margin:0 0 27px}
+.ornament{text-align:center;color:var(--gold);font-size:24px;margin:5px 0 12px}
+.games{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.game-card{background:#fffdf8;border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:0 5px 16px #5b42200d;transition:.2s}
+.game-card:hover{transform:translateY(-5px);box-shadow:0 12px 25px #5b422018}
+.game-art{height:145px;display:grid;place-items:center;font-size:65px;background:linear-gradient(135deg,#e9d8b8,#f8edda);border-bottom:1px solid var(--line)}
+.game-card:nth-child(2n) .game-art{background:linear-gradient(135deg,#d6e2d0,#f1e8d4)}
+.game-content{padding:18px 20px 20px}
+.game-content h3{margin:0 0 8px;color:var(--green);font-size:23px}
+.game-content p{margin:0 0 16px;color:#56665b;line-height:1.5;min-height:48px}
+.small-btn{background:#eaf1e8;color:var(--green);border:1px solid #d6e4d4;border-radius:22px;padding:9px 15px;font-weight:bold;cursor:pointer}
+.small-btn:hover{background:var(--green);color:white}
+.info-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;padding-top:12px}
+.info{border:1px solid var(--line);border-radius:18px;padding:23px;background:#fffaf0}
+.info h3{color:var(--green);font-size:22px;margin:0 0 12px}
+.info p{line-height:1.55;color:#526157;margin:0}
+.ranking{list-style:none;padding:0;margin:0}
+.ranking li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eee4d4}
+.ranking li:last-child{border:0}
+.rank{color:var(--gold);font-weight:bold;margin-right:8px}
+.fact{background:linear-gradient(120deg,#e8efdf,#fff8e9)}
+footer{background:#064328;color:#fff;padding:28px 24px;margin-top:25px}
+.footer-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+footer p{margin:0;color:#e8eee7}footer a{color:#f0d58a;text-decoration:none;margin-left:14px}
+.modal{display:none;position:fixed;inset:0;background:#071d13b8;z-index:50;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}.modal-box{max-width:520px;width:100%;background:#fffaf0;border-radius:20px;padding:28px;position:relative;box-shadow:0 20px 70px #0005}
+.modal-box h2{color:var(--green);margin:0 35px 12px 0}.modal-box p{line-height:1.6;color:#4e5d52}
+.close{position:absolute;right:17px;top:12px;border:0;background:none;font-size:28px;cursor:pointer;color:var(--green)}
+@media(max-width:800px){nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--cream);padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu{display:block}.games{grid-template-columns:repeat(2,1fr)}.info-grid{grid-template-columns:1fr}.hero{background:linear-gradient(90deg,rgba(255,250,240,.96),rgba(255,250,240,.72)),linear-gradient(135deg,#dce9d4,#b3cba8)}}
+@media(max-width:520px){.games{grid-template-columns:1fr}.nav{padding:10px 16px}.brand{font-size:18px}.logo{width:40px;height:40px}.hero-inner{padding:65px 20px 80px}section{padding:34px 17px}.section-title{font-size:27px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#home"><span class="logo">✥</span><span>Türkmen Milli<br>Oýunlary</span></a>
+    <button class="menu" aria-label="Menýuny aç" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#home">⌂ Baş sahypa</a><a href="#oyunlar">♟ Oýunlar</a><a href="#about">ⓘ Hakynda</a><a href="#rating">🏆 Reýting</a><a href="#contact">✉ Habarlaşmak</a>
+    </nav>
+    <button class="lang" onclick="alert('Dil: Türkmençe')">◎ TM</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home" style="max-width:none">
+  <div class="hero-inner">
+    <div class="eyebrow">Medeni mirasymyzy öwreneliň</div>
+    <h1>Türkmen Milli Oýunlary</h1>
+    <div class="subtitle">Biziň däp-dessurymyz, biziň mirasymyz!</div>
+    <p>Türkmen halkynyň milli oýunlary — diňe bir güýmenje däl, eýsem taryhymyzyň, dostlugymyzyň we baý medeniýetimiziň aýrylmaz bölegidir.</p>
+    <a class="btn" href="#oyunlar">▶ Oýunlara geçiň</a>
+  </div>
+</section>
+
+<section id="oyunlar">
+  <div class="ornament">❖ ✥ ❖</div>
+  <h2 class="section-title">Meşhur Türkmen Oýunlary</h2>
+  <p class="section-sub">Milli oýunlarymyz bilen tanyşyň</p>
+  <div class="games">
+    <article class="game-card"><div class="game-art">🦴</div><div class="game-content"><h3>Çilik</h3><p>Çagalaryň arasynda giň ýaýran, çalasynlygy we takyklygy ösdürýän milli oýun.</p><button class="small-btn" onclick="showGame('Çilik','Iki topar bolup oýnalýan bu oýunda kiçi taýajyk uzyn taýak bilen urulyp, mümkin boldugyça uzaklyga zyňylýar. Oýunçylardan çalasynlyk we takyklyk talap edilýär.')">Düzgünini öwren</button></div></article>
+    <article class="game-card"><div class="game-art">⚫</div><div class="game-content"><h3>Şaşka</h3><p>Ünsüňi jemlemäge we öňünden pikirlenmäge kömek edýän akyl oýny.</p><button class="small-btn" onclick="showGame('Şaşka','Oýunçylar gezekli-gezegine daşlaryny diagonally hereket etdirýärler. Garşydaşyň daşyny bökmek arkaly alyp bolýar. Maksat garşydaşyň ähli daşlaryny almak ýa-da hereketini çäklendirmekdir.')">Düzgünini öwren</button></div></article>
+    <article class="game-card"><div class="game-art">🎲</div><div class="game-content"><h3>Keşde / Zar oýny</h3><p>Şowlulyga we hasaplamaga esaslanýan dürli görnüşli oýunlar.</p><button class="small-btn" onclick="showGame('Zar oýny','Zarlar gezekli-gezegine oklanýar. Öňünden kesgitlenen utuk sanyna ilkinji bolup ýeten oýunçy ýeňiji bolýar. Oýun başlamazdan öň düzgünleri ylalaşmak möhümdir.')">Düzgünini öwren</button></div></article>
+    <article class="game-card"><div class="game-art">🥢</div><div class="game-content"><h3>Çöp oýny</h3><p>Üns we sabyrlylyk bilen ýerine ýetirilýän gyzykly bäsleşik.</p><button class="small-btn" onclick="showGame('Çöp oýny','Birnäçe çöp üýşürilýär. Oýunçylar beýleki çöpleri gymyldatman, bir çöpi saýlap almaga synanyşýarlar. Iň köp çöp ýygnan oýunçy ýeňiji bolýar.')">Düzgünini öwren</button></div></article>
+    <article class="game-card"><div class="game-art">🪢</div><div class="game-content"><h3>Arkan çekişmek</h3><p>Toparlaýyn güýç, jebislik we sazlaşyk talap edýän oýun.</p><button class="small-btn" onclick="showGame('Arkan çekişmek','Iki topar arkanyň iki ujundan tutýar. Bellenen alamatdan garşydaş topary öz tarapyna çekmegi başaran topar ýeňiji bolýar. Howpsuz, tekiz meýdan saýlanmalydyr.')">Düzgünini öwren</button></div></article>
+    <article class="game-card"><div class="game-art">🐎</div><div class="game-content"><h3>At çapyşygy</h3><p>Atçylyk däplerimiz bilen bagly gadymy sport bäsleşigi.</p><button class="small-btn" onclick="showGame('At çapyşygy','At çapyşygynda çapyksuwarlar bellenen aralygy at üstünde geçýärler. Pellehana ilkinji gelen çapyksuwar ýeňiji bolýar. Bu bäsleşik diňe ýörite taýýarlykly çapyksuwarlar we howpsuz şertlerde geçirilmelidir.')">Düzgünini öwren</button></div></article>
+  </div>
+</section>
+
+<section class="info-grid" id="about">
+  <div class="info"><h3>✥ Saýt barada</h3><p>Bu sahypa türkmen halkynyň milli oýunlaryny, olaryň taryhyny we düzgünlerini tanatmak maksady bilen döredildi. Milli mirasymyzy bilelikde öwreneliň we geljek nesillere ýetireliň!</p></div>
+  <div class="info" id="rating"><h3>🏆 Oýunçylar reýtingi</h3><ol class="ranking"><li><span><b class="rank">1.</b> Aýlar</span><b>1250 utuk</b></li><li><span><b class="rank">2.</b> Serdar</span><b>1180 utuk</b></li><li><span><b class="rank">3.</b> Aýna</span><b>1100 utuk</b></li><li><span><b class="rank">4.</b> Muhammet</span><b>1050 utuk</b></li><li><span><b class="rank">5.</b> Gülşirin</span><b>980 utuk</b></li></ol></div>
+  <div class="info fact"><h3>ⓘ Gyzykly faktlar</h3><p>Türkmen halk döredijiliginde oýunlar çagalaryň beden taýdan sagdyn, çalasyn we ugurtapyjy bolup ýetişmegine ýardam beripdir. Köp oýunlar dostlugy we toparlaýyn hereketi ösdürýär.</p></div>
+</section>
+</main>
+
+<footer id="contact"><div class="footer-inner"><p>© 2026 Türkmen Milli Oýunlary. Ähli hukuklar goralan.</p><p><i>— Däп-dessurymyz — geljegimizdir! —</i></p><p><a href="#home">Baş sahypa</a><a href="#oyunlar">Oýunlar</a><a href="mailto:info@example.com">Habarlaşmak</a></p></div></footer>
+
+<div class="modal" id="gameModal" onclick="if(event.target===this) closeGame()">
+  <div class="modal-box"><button class="close" aria-label="Ýap" onclick="closeGame()">×</button><h2 id="modalTitle"></h2><p id="modalText"></p><button class="btn" onclick="closeGame()">Düşündim</button></div>
+</div>
+<script>
+function showGame(title,text){
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalText').textContent=text;
+  document.getElementById('gameModal').classList.add('show');
+}
+function closeGame(){document.getElementById('gameModal').classList.remove('show')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGame()});
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+</script>
+</body>
+</html>
